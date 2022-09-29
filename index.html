@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">To-do-list</h1>
+    
+        <div class="div-list">
+            <h2 class="list-title">My lists</h2>
+            <ul class="task-list">
+                <li class="list-name active-list">youtube</li>
+                <li class="list-name ">indeed</li>
+                <li class="list-name ">amazon</li>
+            </ul>
+            <form action="">
+                <input 
+                type="text"
+                placeholder="Enter new task here"
+                class="new-input"
+                aria-label="new list name"
+                />
+                <button class="btn create">+</button>
+            </form>
+        </div>
+        <div class="todo-list">
+            <div class="todo-header">
+                <h2>Youtube</h2>
+                <p>3 tasks remaning</p>
+            </div>
+                <div class="todo-body">
+                    <div class="tasks">
+                        <div class="task">
+                            <input
+                             type="checkbox"
+                             id="task-1"
+                             />
+                            <label for="task-1">
+                                <span>Task 1</span>
+                            </label>
+                        </div>
+                        <!-- Task 1 -->
+                        <div class="task">
+                            <input
+                             type="checkbox"
+                             id="task-1"
+                             />
+                            <label for="task-1">
+                                <span>Task 1</span>
+                            </label>
+                        </div>
+                        <!-- Task 2 -->
+                        <div class="task">
+                            <input
+                             type="checkbox"
+                             id="task-1"
+                             />
+                            <label for="task-1">
+                                <span>Task 1</span>
+                            </label>
+                        </div>
+                        <!-- Task 3 -->
+                    </div>
+                    <div class="new-task-creator">
+                        <form action="">
+                            <input 
+                            type="text"
+                            placeholder="new task here"
+                            class="new list"
+                            aria-label="new task name"
+                            />
+                            <button class="btn create"
+                            aria-label="create new task">+</button>
+                        </form>
+                    </div>
+
+                    <div class="delete-stuff">
+                        <button class="btn delete">Clear All</button>
+                        <button class="btn delete">Delete</button>
+                    </div>
+                </div>
+              
+        </div>
+   
+    
+</body>
+</html>
