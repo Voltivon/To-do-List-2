@@ -1,158 +1,233 @@
-*, *::before, *::after {
-    font-family: inherit;
-    box-sizing: border-box;
+:root {
+  --primary-color: #6b7280;
+  --secondary-color: #d6d3d1;
+  --third-color: #d97706;
+  --fourth-color: #cbd5e1;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 2;
-    font-size: 1;
-    background-color: gray;
-    display: grid;
-    grid: "header header header header" auto
-    "...... lists active ......" auto / 
-    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr
-    /* grid-template-rows: 1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
-    grid-template-columns: repeat(2, auto);
-     */
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 2;
+  font-size: 1;
+  background-color: var(--primary-color);
+  display: grid;
+  grid:
+    "header header header header" auto
+    "...... lists active ......" auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  /* grid-template-rows: 1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+      grid-template-columns: repeat(2, auto);
+       */
 }
 
 .list-name {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .list-name:hover {
-    opacity: 0.7;;
+  opacity: 0.7;
 }
 
 form {
-    display: flex;
+  display: flex;
 }
 
-.title{
-    grid-area: header;
-    text-align: center;
-    font-size: calc(7vw, + 2rem);
-    font-weight: 900;
-    color: rgba(0,0,0,0.1);
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: calc(7vw, + 2rem);
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.1);
 }
 
-.div-list{
-    grid-area: lists;
+.div-list {
+  grid-area: lists;
 }
 
 .task-list {
-    list-style-type: none;
-    line-height: 1.7;
+  list-style-type: circle;
+  line-height: 1.7;
 }
 
 .todo-list {
-    grid-area: active;
-  
+  grid-area: active;
 }
 
 .new-input {
-    background: transparent;
-    border: 0;
-    color: inherit;
-    border-bottom: 1px solid currentColor;
-    outline: none;
-    transition: border-bottom 150ms ease-in;
-    order: 2;
-}
-
-.new-input:focus {
-    border-bottom-width: 3px;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
 }
 
 .new-input::placeholder {
-    /* opacity: 0.2; */
+  color: black;
 }
 
-.new.list{
-    font-size: 1.2rem;
+.new-input:focus {
+  border-bottom-width: 3px;
+}
+
+.new.list {
+  font-size: 1.2rem;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  order: 2;
+  outline: none;
+  background-color: inherit;
+}
+
+.new.list:focus {
+  border-bottom-width: 3px;
+  transition: border-bottom 150ms ease-in;
+}
+
+.new-task-creator {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 25px;
+  position: relative;
+  top: 30px;
 }
 
 .btn {
-    padding:0;
-    margin: 0;
-    cursor: pointer;
-    background: 0;
-    color: inherit
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: 0;
+  color: inherit;
 }
 
 .btn.create:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .btn.create {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-right: 0.25em;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
 }
 
 .todo-list {
-    --spacer: 2rem;
-    grid-area: active;
-    background: whitesmoke;
-    color: inherit
+  --spacer: 2rem;
+  grid-area: active;
+  background: var(--secondary-color);
+  color: inherit;
 }
 
 .todo-header {
-    padding: var(--spacer);
-    background: #e4e4e4;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: var(--spacer);
+  background: var(--third-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .list-title {
-    margin: 0 1em 0 0;
+  margin: 0 1em 0 0;
+}
+
+span {
+  padding-left: 24px;
 }
 
 .task-count {
-    margin: 0;
-    font-size: 1rem;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .todo-body {
-    padding: var(--spacer);
+  padding: var(--spacer);
 }
 
-
-[type="checkbox"]{
-    opacity: 0;
-    position: absolute;
+[type="checkbox"] {
+  /* opacity: 0; */
+  position: absolute;
 }
 
 .task label {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-bottom: 1.25em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.25em;
 }
 
-.task label::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: -50%;
-    height: 1px;
-    background: currentColor;
+.task {
+  position: relative;
+}
 
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -50%;
+  height: 1px;
+  background: currentColor;
 }
 
 .custom-checkbox {
-    --size: .75em;
-    display: inline-block;
-    width: var(--size);
-    height: var(--size);
-    cursor: pointer;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    transform: scale(1);
-    transition: transform 200ms ease-in-out;
-    
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: scale(1.2);
+  transition: transform 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox {
+  transform: scale(1.6);
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.delete-stuff {
+  display: flex;
+  justify-content: space-evenly;
+  left: 0;
+  position: relative;
+  right: 0;
+  bottom: -100px;
+}
+
+.btn.clear,
+.btn.delete {
+  border: none;
+  padding: 5px;
+  font-size: 2rem;
+}
+
+.btn.clear:focus,
+.btn.delete:focus {
+  transform: scale(1.1);
+  color: #06b6d4;
 }
