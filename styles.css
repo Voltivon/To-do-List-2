@@ -24,8 +24,8 @@ body {
     "...... lists active ......" auto /
     1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
   /* grid-template-rows: 1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
-      grid-template-columns: repeat(2, auto);
-       */
+    grid-template-columns: repeat(2, auto);
+     */
 }
 
 .list-name {
@@ -230,4 +230,9 @@ span {
 .btn.delete:focus {
   transform: scale(1.1);
   color: #06b6d4;
+}
+
+.active-list {
+  color: white;
+  font-weight: bold;
 }

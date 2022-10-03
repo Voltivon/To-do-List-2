@@ -13,28 +13,29 @@
 
     <div class="div-list">
       <h2 class="list-title">My lists</h2>
-      <ul class="task-list">
-        <li class="list-name active-list">youtube</li>
-        <li class="list-name">indeed</li>
-        <li class="list-name">amazon</li>
+      <ul class="task-list" data-lists>
+        <!-- <li class="list-name active-list">youtube</li>
+                <li class="list-name ">indeed</li>
+                <li class="list-name ">amazon</li> -->
       </ul>
-      <form action="">
+      <form action="" data-new-list-form>
         <input
           type="text"
           placeholder="Enter new task here"
+          data-new-list-input
           class="new-input"
           aria-label="new list name"
         />
         <button class="btn create">+</button>
       </form>
     </div>
-    <div class="todo-list">
+    <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2>Youtube</h2>
-        <p>3 tasks remaning</p>
+        <h2 data-list-title>Youtube</h2>
+        <p data-list-count>3 tasks remaning</p>
       </div>
       <div class="todo-body">
-        <div class="tasks">
+        <div class="tasks" data-tasks>
           <div class="task">
             <input type="checkbox" id="task-1" class="custom-checkbox" />
             <label for="task-1">
@@ -70,7 +71,7 @@
 
         <div class="delete-stuff">
           <button class="btn clear">Clear All</button>
-          <button class="btn delete">Delete</button>
+          <button class="btn delete" data-delete-list-button>Delete</button>
         </div>
       </div>
     </div>
